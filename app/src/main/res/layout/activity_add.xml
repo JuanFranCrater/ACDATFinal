@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	android:id="@+id/txt32"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_margin="20dp">
+
+	<TextView
+		android:id="@+id/txtName"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Nombre:" />
+
+	<EditText
+		android:id="@+id/nameTarea"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Tarea"
+		android:textSize="18sp" />
+
+	<TextView
+		android:id="@+id/txtDescription"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Descripcion:" />
+
+    <EditText
+        android:id="@+id/descriptionTarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textLongMessage"
+        android:text="Descripcion"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/linarLImportancia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="."
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtImportancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="Importancia:" />
+
+        <Spinner
+            android:id="@+id/spnImportancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/importancia"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/dateDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="dd/mm/aaaa"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/pickDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="0"
+            android:text="Fecha" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enlace:" />
+
+    <EditText
+        android:id="@+id/linkTarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="portadaalta.mobi"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtimg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enlace a imagen:" />
+
+	<EditText
+		android:id="@+id/imagenTarea"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="portadaalta.mobi/imagen"
+		android:textSize="16sp" />
+<LinearLayout
+	android:id="@+id/linearLBtn"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:layout_gravity="center_horizontal">
+
+	<Button
+		android:id="@+id/accept"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Aceptar" />
+
+	<Button
+		android:id="@+id/cancel"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Cancelar" />
+</LinearLayout>
+</LinearLayout>
