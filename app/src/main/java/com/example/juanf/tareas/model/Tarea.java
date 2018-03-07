@@ -9,10 +9,10 @@ import java.util.Date;
 
 public class Tarea implements Serializable {
     private int id;
-    private String name;
+    private String nombre;
     private String description;
     private int importancia;
-    private String deadLine;
+    private String deadline;
     private String link;
     private String image;
 
@@ -23,10 +23,10 @@ public class Tarea implements Serializable {
         this.id = id;
     }
     public String getName() {
-        return name;
+        return nombre;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String nombre) {
+        this.nombre = nombre;
     }
     public String getLink() {
         return link;
@@ -46,11 +46,11 @@ public class Tarea implements Serializable {
     public void setImportancia(int importancia) {
         this.importancia = importancia;
     }
-    public String getDeadLine() {
-        return deadLine;
+    public String getDeadline() {
+        return deadline;
     }
-    public void setDeadLine(String deadLine) {
-        this.deadLine = deadLine;
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
     }
     public String getImage() {
         return image;
@@ -60,27 +60,38 @@ public class Tarea implements Serializable {
     }
     public  Tarea() {}
 
-    public Tarea(int id, String name, String description, int importancia, String deadLine, String link, String image) {
+    public Tarea(int id, String nombre, String description, int importancia, String deadline, String link, String image) {
         this.id = id;
-        this.name = name;
+        this.nombre = nombre;
         this.description = description;
         this.importancia = importancia;
-        this.deadLine = deadLine;
+        this.deadline = deadline;
         this.link = link;
         this.image = image;
     }
 
-    public Tarea(String name, String description, int importancia, String deadLine, String link, String image) {
-        this.name = name;
+    public Tarea(String nombre, String description, int importancia, String deadline, String link, String image) {
+        this.nombre = nombre;
         this.description = description;
         this.importancia = importancia;
-        this.deadLine = deadLine;
+        this.deadline = deadline;
         this.link = link;
         this.image = image;
     }
 
     @Override
     public String toString() {
-        return  name + '\n' + description;
+        return  nombre + '\n' + description;
+    }
+    public String toJson(){
+        return " {\n" +
+        "\"id\": "+id+",\n" +
+        "\"nombre\": "+nombre+",\n" +
+        "\"description\": "+description+",\n" +
+        "\"importancia\": "+importancia+",\n" +
+        "\"deadline\": "+deadline+",\n" +
+        "\"link\": "+link+",\n" +
+        "\"image\": "+image+"\n" +
+        "}";
     }
 }

@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiAdapter {
     private static ApiService API_SERVICE;
 
-    public static final String BASE_URL = "/";
+    public static final String BASE_URL = "http://www.c-raterstudio.com/";
 
     public static synchronized ApiService getInstance() {
 
@@ -26,9 +26,9 @@ public class ApiAdapter {
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
             OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                    .connectTimeout(10, TimeUnit.SECONDS)
-                    .readTimeout(10, TimeUnit.SECONDS)
-                    .writeTimeout(5, TimeUnit.SECONDS)
+                    .connectTimeout(15, TimeUnit.SECONDS)
+                    .readTimeout(15, TimeUnit.SECONDS)
+                    .writeTimeout(10, TimeUnit.SECONDS)
                     .addInterceptor(logging)
                     .build();
 

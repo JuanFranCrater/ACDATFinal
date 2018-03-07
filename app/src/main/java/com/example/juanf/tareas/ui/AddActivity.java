@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -76,8 +77,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         dateDisplay.setText(
                 new StringBuilder()
                         // Month is 0 based so add 1
-                        .append(mMonth + 1).append("-")
                         .append(mDay).append("-")
+                        .append(mMonth + 1).append("-")
                         .append(mYear).append(" "));
     }
 
@@ -105,21 +106,21 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        String name, description, importancia, dadLine, link, imagen;
+        String name, description, importancia, deadLine, link, imagen;
         Tarea t;
 
         if (v == accept) {
             name = nameTarea.getText().toString();
             description=descriptionTarea.getText().toString();
             importancia=spinImportancia.getSelectedItem().toString();
-            dadLine=dateDisplay.getText().toString();
+            deadLine=dateDisplay.getText().toString();
             link = linkTarea.getText().toString();
             imagen=imagenTarea.getText().toString();
 
             if (name.isEmpty() || description.isEmpty())
                 Toast.makeText(this, "Nombre y Descripcion no pueden estar vacios", Toast.LENGTH_SHORT).show();
             else {
-                t = new Tarea(name, description , Integer.valueOf(importancia),dadLine,link,imagen);
+                t = new Tarea(name, description , Integer.valueOf(importancia),deadLine,link,imagen);
                 connection(t);
             }
         }
@@ -149,7 +150,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
             mBundle.putString("name", tarea.getName());
             mBundle.putString("description",tarea.getDescription());
             mBundle.putInt("importancia",tarea.getImportancia());
-            mBundle.putString("deadline",tarea.getDeadLine());
+            mBundle.putString("deadline",tarea.getDeadline());
             mBundle.putString("link", tarea.getLink());
             mBundle.putString("image", tarea.getImage());
             i.putExtras(mBundle);

@@ -1,11 +1,13 @@
 package com.example.juanf.tareas.ui;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,6 +18,7 @@ import com.example.juanf.tareas.model.Tarea;
 import com.example.juanf.tareas.network.ApiAdapter;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,7 +49,29 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
     Button cancel;
     ProgressDialog progreso;
     Tarea tarea;
+    Calendar c=Calendar.getInstance();
+    int  mYear = c.get(Calendar.YEAR);
+    int  mMonth = c.get(Calendar.MONTH);
+    int  mDay = c.get(Calendar.DAY_OF_MONTH);
+    private DatePickerDialog.OnDateSetListener mDateSetListener =
+            new DatePickerDialog.OnDateSetListener() {
 
+                public void onDateSet(DatePicker view, int year,
+                                      int monthOfYear, int dayOfMonth) {
+                    mYear = year;
+                    mMonth = monthOfYear;
+                    mDay = dayOfMonth;
+                    updateDisplay();
+                }
+            };
+    private void updateDisplay() {
+        dateDisplay.setText(
+                new StringBuilder()
+                        // Month is 0 based so add 1
+                        .append(mDay).append("-")
+                        .append(mMonth + 1).append("-")
+                        .append(mYear).append(" "));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +87,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
         linkTarea.setText(tarea.getLink());
         descriptionTarea.setText(tarea.getDescription());
         spinImportancia.setSelection(tarea.getImportancia()-1);
-        dateDisplay.setText(tarea.getDeadLine());
+        dateDisplay.setText(tarea.getDeadline());
         imagenTarea.setText(tarea.getImage());
     }
 
@@ -86,7 +111,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
                 tarea.setImage(imagen);
                 tarea.setDescription(description);
                 tarea.setImportancia(Integer.parseInt(importancia));
-                tarea.setDeadLine(dadLine);
+                tarea.setDeadline(dadLine);
                 connection(tarea);
             }
         }
@@ -109,14 +134,14 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
     public void onResponse(Call<Tarea> call, Response<Tarea> response) {
         progreso.dismiss();
         if (response.isSuccessful()) {
-            Tarea site = response.body();
+            Tarea tarea = response.body();
             Intent i = new Intent();
             Bundle mBundle = new Bundle();
             mBundle.putInt("id", tarea.getId());
             mBundle.putString("name", tarea.getName());
             mBundle.putString("description",tarea.getDescription());
             mBundle.putInt("importancia",tarea.getImportancia());
-            mBundle.putString("deadline",tarea.getDeadLine());
+            mBundle.putString("deadline",tarea.getDeadline());
             mBundle.putString("link", tarea.getLink());
             mBundle.putString("image", tarea.getImage());
             i.putExtras(mBundle);

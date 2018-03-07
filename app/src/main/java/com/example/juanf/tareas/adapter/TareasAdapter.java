@@ -2,6 +2,7 @@ package com.example.juanf.tareas.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,8 @@ public class TareasAdapter extends RecyclerView.Adapter<TareasAdapter.ViewHolder
 
         @BindView(R.id.textName) TextView name;
         @BindView(R.id.textDescription) TextView description;
+        @BindView(R.id.textImportancia) TextView importancia;
+        @BindView(R.id.textDeadLine) TextView deadLine;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -48,6 +51,8 @@ public class TareasAdapter extends RecyclerView.Adapter<TareasAdapter.ViewHolder
         Tarea tarea = tareas.get(position);
         holder.name.setText(tarea.getName());
         holder.description.setText(tarea.getDescription());
+        holder.importancia.setText("Importancia: "+tarea.getImportancia());
+        holder.deadLine.setText(tarea.getDeadline());
     }
 
     public void setTareas(ArrayList<Tarea> tareas) {

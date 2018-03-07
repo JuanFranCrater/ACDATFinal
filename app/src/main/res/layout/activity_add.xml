@@ -39,7 +39,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="."
         android:gravity="center">
 
         <TextView
@@ -66,21 +65,25 @@
         android:layout_weight="0"
         android:gravity="center">
 
-        <TextView
-            android:id="@+id/dateDisplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="dd/mm/aaaa"
-            android:textStyle="bold" />
+		<TextView
+			android:id="@+id/dateDisplay"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="dd/mm/aaaa"
+			android:textAlignment="center"
+			android:textSize="18sp"
+			android:textStyle="bold|italic" />
 
-        <Button
-            android:id="@+id/pickDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_weight="0"
-            android:text="Fecha" />
+		<Button
+			android:id="@+id/pickDate"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="0dp"
+			android:layout_weight="0"
+			android:text="Fecha"
+			android:textAlignment="center"
+			android:textAllCaps="false" />
     </LinearLayout>
 
     <TextView
