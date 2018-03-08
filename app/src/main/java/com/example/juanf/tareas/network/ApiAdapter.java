@@ -10,9 +10,6 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by paco on 6/02/18.
- */
 
 public class ApiAdapter {
     private static ApiService API_SERVICE;

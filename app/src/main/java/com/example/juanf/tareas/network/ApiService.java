@@ -15,9 +15,6 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
-/**
- * Created by paco on 6/02/18.
- */
 
 public interface ApiService {
     @GET("api/tareas")

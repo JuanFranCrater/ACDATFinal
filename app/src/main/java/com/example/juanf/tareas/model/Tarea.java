@@ -1,8 +1,6 @@
 package com.example.juanf.tareas.model;
 
-/**
- * Created by paco
- */
+
 
 import java.io.Serializable;
 import java.util.Date;
