@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ACDATFinal.iml" filepath="$PROJECT_DIR$/ACDATFinal.iml" />
       <module fileurl="file://C:\Users\PcCom\Desktop\Rest\trabajocasarest\Tareas.iml" filepath="C:\Users\PcCom\Desktop\Rest\trabajocasarest\Tareas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/trabajocasarest.iml" filepath="$PROJECT_DIR$/trabajocasarest.iml" />
     </modules>

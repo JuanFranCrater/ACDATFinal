@@ -110,7 +110,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
                 tarea.setLink(link);
                 tarea.setImage(imagen);
                 tarea.setDescription(description);
-                tarea.setImportancia(Integer.parseInt(importancia));
+                tarea.setImportancia(Integer.parseInt(importancia)+1);
                 tarea.setDeadline(dadLine);
                 connection(tarea);
             }
